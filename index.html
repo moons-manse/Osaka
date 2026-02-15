@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>9박 10일 간사이 여행 명령서 (Final Complete)</title>
+    <title>9박 10일 간사이 여행 명령서 (FULL COMPLETE)</title>
     <style>
         @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
         body { font-family: 'Pretendard', sans-serif; line-height: 1.5; color: #333; max-width: 1100px; margin: 0 auto; padding: 20px; background: #f8f9fa; }
@@ -11,14 +11,16 @@
         h2 { background: #3f51b5; color: white; padding: 12px; border-radius: 8px; margin-top: 40px; font-size: 1.3rem; }
         .filter-wrapper { position: sticky; top: 0; background: #f8f9fa; padding: 15px 0; z-index: 1000; border-bottom: 2px solid #3f51b5; }
         #day-filter { padding: 12px; font-size: 17px; border-radius: 10px; border: 3px solid #3f51b5; width: 100%; max-width: 600px; display: block; margin: 0 auto; cursor: pointer; font-weight: bold; }
-        .table-container { overflow-x: auto; background: #fff; border-radius: 12px; margin-top: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-        table { width: 100%; border-collapse: collapse; min-width: 1050px; table-layout: fixed; }
+        .table-container { overflow-x: auto; background: #fff; border-radius: 12px; margin-top: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid #e0e0e0; }
+        table { width: 100%; border-collapse: collapse; min-width: 1000px; table-layout: fixed; }
         th { background: #e8eaf6; color: #1a237e; border: 1px solid #c5cae9; padding: 12px; font-size: 14px; text-align: center; }
         td { border: 1px solid #c5cae9; padding: 14px; font-size: 15px; vertical-align: middle; word-break: keep-all; }
-        .col-time { width: 85px; text-align: center; font-weight: bold; color: #d32f2f; }
-        .col-plan { width: 190px; font-weight: bold; color: #1a237e; }
+        .col-time { width: 80px; text-align: center; font-weight: bold; color: #d32f2f; }
+        .col-plan { width: 180px; font-weight: bold; color: #1a237e; }
         .col-detail { width: 450px; background-color: #fcfcfc; }
-        .map-btn { display: inline-block; background-color: #4CAF50; color: white !important; padding: 8px 12px; border-radius: 6px; font-size: 13px; text-decoration: none; font-weight: bold; }
+        .col-map { width: 110px; text-align: center; }
+        .col-food { width: 220px; color: #d81b60; font-weight: bold; }
+        .map-btn { display: inline-block; background-color: #4CAF50; color: white !important; padding: 8px 14px; border-radius: 6px; font-size: 13px; text-decoration: none; font-weight: bold; }
         .train-num { background: #f3e5f5; color: #4a148c; padding: 3px 8px; border-radius: 12px; font-size: 13px; border: 1px solid #7b1fa2; font-weight: bold; }
         .bus-num { background: #e0f7fa; color: #006064; padding: 3px 8px; border-radius: 12px; font-size: 13px; border: 1px solid #0097a7; font-weight: bold; }
         .hotel-info { background: #2c3e50; color: #ecf0f1; padding: 18px; border-radius: 10px; font-weight: bold; margin: 20px 0; border-left: 10px solid #f1c40f; font-size: 16px; }
@@ -26,11 +28,13 @@
     </style>
 </head>
 <body>
-    <h1>✈️ 9박 10일 간사이 여행 명령서 (FULL COMPLETE)</h1>
+
+    <h1>✈️ 9박 10일 간사이 여행 명령서 (Final Complete)</h1>
+
     <div class="filter-wrapper">
         <select id="day-filter" onchange="filterSchedule()">
             <option value="all">📅 전체 일정 보기 (4/13 - 4/22)</option>
-            <option value="413">4/13 (일) 교토 입성</option>
+            <option value="413">4/13 (일) 교토 입성 (공항/기요미즈데라)</option>
             <option value="414">4/14 (월) 아라시야마 & 금각사/료안지</option>
             <option value="415">4/15 (화) 고베 & 아리마 온천</option>
             <option value="416">4/16 (수) 오사카 이동 & 고시엔 야구</option>
@@ -39,56 +43,110 @@
             <option value="419">4/19 (토) 우메다 쇼핑 & 공중정원</option>
             <option value="420">4/20 (일) 신세카이 & 텐노지 동물원</option>
             <option value="421">4/21 (월) 히메지 성 & 코코엔 정원</option>
-            <option value="422">4/22 (화) 귀국</option>
+            <option value="422">4/22 (화) 귀국 (공항 이동)</option>
         </select>
     </div>
+
     <div id="schedule-content">
         <section class="day-section" id="day-413">
             <h2>🌸 4/13 (일) 교토 입성</h2>
-            <div class="hotel-info">🏨 숙소: <a href="https://maps.google.com/?q=어반+호텔+교토+시조+프리미엄" class="place-link" target="_blank">어반 호텔 교토 시조 프리미엄</a></div>
+            <div class="hotel-info">🏨 숙소: <a href="https://www.google.com/maps/search/Urban+Hotel+Kyoto+Shijo+Premium" class="place-link" target="_blank">어반 호텔 교토 시조 프리미엄</a></div>
             <div class="table-container"><table>
                 <tr><th class="col-time">시간</th><th class="col-plan">일정</th><th class="col-detail">상세 이동 방법</th><th class="col-map">구글맵</th><th class="col-food">식사/비고</th></tr>
-                <tr><td>11:30</td><td>교토역 이동</td><td>간사이공항역 4번 승강장 → <span class="train-num">JR 하루카</span></td><td><a href="https://www.google.com/maps/dir/Kansai+Airport/Kyoto+Station" target="_blank" class="map-btn">🗺️ 경로</a></td><td>-</td></tr>
-                <tr><td>13:00</td><td>호텔 체크인</td><td>교토역 B3 승강장 → <span class="bus-num">206번</span> 버스 탑승</td><td><a href="https://www.google.com/maps/dir/Kyoto+Station/Urban+Hotel+Kyoto-Shijo+Premium" target="_blank" class="map-btn">🗺️ 경로</a></td><td>짐 보관</td></tr>
-                <tr><td>16:00</td><td>기요미즈데라</td><td><a href="https://maps.google.com/?q=기요미즈데라" class="place-link">기요미즈데라</a> 및 산넨자카/니넨자카</td><td><a href="https://maps.google.com/?q=기요미즈데라" target="_blank" class="map-btn">🗺️ 위치</a></td><td>야경 감상</td></tr>
+                <tr><td>11:30</td><td>교토 이동</td><td><a href="https://www.google.com/maps/search/Kansai+Airport+Station" class="place-link">간사이공항역</a> 4번 승강장 → <span class="train-num">JR 하루카</span></td><td><a href="https://www.google.com/maps/dir/Kansai+Airport/Kyoto+Station" target="_blank" class="map-btn">🗺️ 경로</a></td><td>-</td></tr>
+                <tr><td>13:00</td><td>호텔 체크인</td><td><a href="https://www.google.com/maps/search/Kyoto+Station" class="place-link">교토역</a> B3 승강장 → <span class="bus-num">206번</span> 버스 탑승</td><td><a href="https://www.google.com/maps/dir/Kyoto+Station/Urban+Hotel+Kyoto+Shijo+Premium" target="_blank" class="map-btn">🗺️ 경로</a></td><td>짐 보관</td></tr>
+                <tr><td>16:00</td><td>기요미즈데라</td><td><a href="https://www.google.com/maps/search/Kiyomizu-dera" class="place-link">기요미즈데라</a> 및 산넨자카/니넨자카</td><td><a href="https://www.google.com/maps/search/Kiyomizu-dera" target="_blank" class="map-btn">🗺️ 위치</a></td><td>야경 감상</td></tr>
             </table></div>
         </section>
+
+        <section class="day-section" id="day-414">
+            <h2>🌸 4/14 (월) 아라시야마 & 금각사/료안지</h2>
+            <div class="table-container"><table>
+                <tr><th class="col-time">시간</th><th class="col-plan">일정</th><th class="col-detail">상세 이동 방법</th><th class="col-map">구글맵</th><th class="col-food">식사/비고</th></tr>
+                <tr><td>08:30</td><td>아라시야마</td><td><a href="https://www.google.com/maps/search/Shijo-Omiya+Station" class="place-link">시조오미야역</a> → <span class="train-num">란덴 열차</span> 종점 하차</td><td><a href="https://www.google.com/maps/search/Arashiyama+Bamboo+Forest" target="_blank" class="map-btn">🗺️ 경로</a></td><td>대나무 숲</td></tr>
+                <tr><td>13:00</td><td>금각사/료안지</td><td><a href="https://www.google.com/maps/search/Kinkaku-ji" class="place-link">금각사</a> 관람 후 <a href="https://www.google.com/maps/search/Ryoan-ji" class="place-link">료안지</a> 이동(버스)</td><td><a href="https://www.google.com/maps/dir/Arashiyama/Kinkakuji" target="_blank" class="map-btn">🗺️ 경로</a></td><td>🍱 요시무라</td></tr>
+            </table></div>
+        </section>
+
+        <section class="day-section" id="day-415">
+            <h2>🌸 4/15 (화) 고베 & 아리마 온천</h2>
+            <div class="table-container"><table>
+                <tr><th class="col-time">시간</th><th class="col-plan">일정</th><th class="col-detail">상세 이동 방법</th><th class="col-map">구글맵</th><th class="col-food">식사/비고</th></tr>
+                <tr><td>11:00</td><td>산노미야</td><td>교토역 → <span class="train-num">JR 신쾌속</span> → <a href="https://www.google.com/maps/search/Sannomiya+Station" class="place-link">산노미야역</a></td><td><a href="https://www.google.com/maps/search/Sannomiya" target="_blank" class="map-btn">🗺️ 위치</a></td><td>🥩 고베규</td></tr>
+                <tr><td>15:00</td><td>아리마 온천</td><td>산노미야 → <span class="train-num">JR 고속버스</span> → <a href="https://www.google.com/maps/search/Arima+Onsen" class="place-link">아리마 온천</a></td><td><a href="https://www.google.com/maps/search/Arima+Onsen" target="_blank" class="map-btn">🗺️ 위치</a></td><td>온천 휴식</td></tr>
+            </table></div>
+        </section>
+
+        <section class="day-section" id="day-416">
+            <h2>⚾ 4/16 (수) 오사카 이동 & 고시엔 야구</h2>
+            <div class="hotel-info">🏨 숙소: <a href="https://www.google.com/maps/search/Art+Hotel+Osaka+Bay+Tower" class="place-link" style="color:#f1c40f;">아트 호텔 오사카 베이 타워</a></div>
+            <div class="table-container"><table>
+                <tr><th class="col-time">시간</th><th class="col-plan">일정</th><th class="col-detail">상세 이동 방법</th><th class="col-map">구글맵</th><th class="col-food">식사/비고</th></tr>
+                <tr><td>10:40</td><td>오사카 이동</td><td>아리마 → <span class="train-num">JR 고속버스</span> → <a href="https://www.google.com/maps/search/Osaka+Station" class="place-link">오사카역</a></td><td><a href="https://www.google.com/maps/dir/Arima+Onsen/Osaka+Station" target="_blank" class="map-btn">🗺️ 경로</a></td><td>예매 필수</td></tr>
+                <tr><td>16:10</td><td>고시엔 야구</td><td>벤텐초 → 니시쿠조 환승 → <a href="https://www.google.com/maps/search/Hanshin+Koshien+Stadium" class="place-link">고시엔 구장</a></td><td><a href="https://www.google.com/maps/dir/Bentencho/Koshien+Stadium" target="_blank" class="map-btn">🗺️ 경로</a></td><td>⚾ 야구 관람</td></tr>
+            </table></div>
+        </section>
+
         <section class="day-section" id="day-417">
-            <h2>⚾ 4/17 (목) 오사카 시내</h2>
-            <div class="hotel-info">🏨 **08:00 조식 → 09:00 숙소 출발** (<a href="https://maps.google.com/?q=아트+호텔+오사카+베이+타워" class="place-link" style="color:#f1c40f;">아트 호텔 오사카 베이 타워</a>)</div>
+            <h2>⚾ 4/17 (목) 오사카성 & 도톤보리</h2>
+            <div class="hotel-info">🏨 **08:00 호텔 조식 → 09:00 숙소 출발**</div>
             <div class="table-container"><table>
                 <tr><th class="col-time">시간</th><th class="col-plan">일정</th><th class="col-detail">상세 이동 방법</th><th class="col-map">구글맵</th><th class="col-food">식사/비고</th></tr>
-                <tr><td>09:30</td><td>오사카성</td><td>벤텐초 → <span class="train-num">지하철 주오선</span> → <a href="https://maps.google.com/?q=오사카성" class="place-link">오사카성</a></td><td><a href="https://www.google.com/maps/dir/Bentencho+Station/Osaka+Castle" target="_blank" class="map-btn">🗺️ 경로</a></td><td>니시노마루</td></tr>
-                <tr><td>19:00</td><td>도톤보리</td><td>닛폰바시역 → <a href="https://maps.google.com/?q=도톤보리" class="place-link">도톤보리</a> 및 호젠지 요코초</td><td><a href="https://maps.google.com/?q=도톤보리" target="_blank" class="map-btn">🗺️ 위치</a></td><td>🍺 후쿠타로</td></tr>
+                <tr><td>09:30</td><td>오사카성</td><td>벤텐초 → <span class="train-num">지하철 주오선</span> → <a href="https://www.google.com/maps/search/Osaka+Castle" class="place-link">오사카성</a></td><td><a href="https://www.google.com/maps/search/Osaka+Castle" target="_blank" class="map-btn">🗺️ 위치</a></td><td>니시노마루</td></tr>
+                <tr><td>19:00</td><td>도톤보리</td><td><a href="https://www.google.com/maps/search/Dotonbori" class="place-link">도톤보리</a> 및 <a href="https://www.google.com/maps/search/Hozenji+Yokocho" class="place-link">호젠지 요코초</a> 산책</td><td><a href="https://www.google.com/maps/search/Dotonbori" target="_blank" class="map-btn">🗺️ 위치</a></td><td>🍺 후쿠타로</td></tr>
             </table></div>
         </section>
+
         <section class="day-section" id="day-418">
-            <h2>⚾ 4/18 (금) 나라 사슴공원</h2>
-            <div class="hotel-info">🏨 **08:00 조식 → 09:00 출발**</div>
+            <h2>⚾ 4/18 (금) 나라 사슴공원 & 동대사</h2>
+            <div class="hotel-info">🏨 **08:00 호텔 조식 → 09:00 숙소 출발**</div>
             <div class="table-container"><table>
                 <tr><th class="col-time">시간</th><th class="col-plan">일정</th><th class="col-detail">상세 이동 방법</th><th class="col-map">구글맵</th><th class="col-food">식사/비고</th></tr>
-                <tr><td>09:00</td><td>나라 이동</td><td>벤텐초 → <span class="train-num">JR 야마토지 쾌속</span> (직통) → <a href="https://maps.google.com/?q=나라역" class="place-link">나라역</a></td><td><a href="https://www.google.com/maps/dir/Bentencho+Station/Nara+Station" target="_blank" class="map-btn">🗺️ 경로</a></td><td>-</td></tr>
-                <tr><td>11:00</td><td>동대사</td><td><a href="https://maps.google.com/?q=동대사" class="place-link">동대사(토다이지)</a> 및 사슴공원</td><td><a href="https://maps.google.com/?q=동대사" target="_blank" class="map-btn">🗺️ 위치</a></td><td>사슴 먹이주기</td></tr>
+                <tr><td>09:00</td><td>나라 이동</td><td>벤텐초 → <span class="train-num">JR 야마토지 쾌속</span> → <a href="https://www.google.com/maps/search/Nara+Station" class="place-link">나라역</a></td><td><a href="https://www.google.com/maps/dir/Bentencho/Nara+Station" target="_blank" class="map-btn">🗺️ 경로</a></td><td>직통 열차</td></tr>
+                <tr><td>11:00</td><td>동대사</td><td><a href="https://www.google.com/maps/search/Todai-ji" class="place-link">동대사</a> 및 사슴공원 산책</td><td><a href="https://www.google.com/maps/search/Todai-ji" target="_blank" class="map-btn">🗺️ 위치</a></td><td>사슴 먹이</td></tr>
             </table></div>
         </section>
+
+        <section class="day-section" id="day-419">
+            <h2>⚾ 4/19 (토) 우메다 쇼핑 & 공중정원</h2>
+            <div class="hotel-info">🏨 **08:00 호텔 조식 → 09:00 숙소 출발**</div>
+            <div class="table-container"><table>
+                <tr><th class="col-time">시간</th><th class="col-plan">일정</th><th class="col-detail">상세 이동 방법</th><th class="col-map">구글맵</th><th class="col-food">식사/비고</th></tr>
+                <tr><td>13:00</td><td>우메다 쇼핑</td><td>벤텐초 → <a href="https://www.google.com/maps/search/Umeda" class="place-link">우메다</a> 백화점 투어</td><td><a href="https://www.google.com/maps/search/Hankyu+Umeda" target="_blank" class="map-btn">🗺️ 위치</a></td><td>호쿠토세이</td></tr>
+                <tr><td>20:00</td><td>공중정원</td><td><a href="https://www.google.com/maps/search/Umeda+Sky+Building" class="place-link">우메다 스카이빌딩</a> 야경</td><td><a href="https://www.google.com/maps/search/Umeda+Sky+Building" target="_blank" class="map-btn">🗺️ 위치</a></td><td>🍷 블루버드</td></tr>
+            </table></div>
+        </section>
+
+        <section class="day-section" id="day-420">
+            <h2>🏯 4/20 (일) 신세카이 & 텐노지 동물원</h2>
+            <div class="hotel-info">🏨 **08:00 호텔 조식 → 09:00 숙소 출발**</div>
+            <div class="table-container"><table>
+                <tr><th class="col-time">시간</th><th class="col-plan">일정</th><th class="col-detail">상세 이동 방법</th><th class="col-map">구글맵</th><th class="col-food">식사/비고</th></tr>
+                <tr><td>10:30</td><td>츠텐카쿠</td><td>벤텐초 → <a href="https://www.google.com/maps/search/Tsutenkaku" class="place-link">츠텐카쿠</a> 및 <a href="https://www.google.com/maps/search/Shinsekai" class="place-link">신세카이</a></td><td><a href="https://www.google.com/maps/search/Tsutenkaku" target="_blank" class="map-btn">🗺️ 위치</a></td><td>🍢 야에카츠</td></tr>
+                <tr><td>13:00</td><td>동물원</td><td><a href="https://www.google.com/maps/search/Tennoji+Zoo" class="place-link">텐노지 동물원</a> 관람</td><td><a href="https://www.google.com/maps/search/Tennoji+Zoo" target="_blank" class="map-btn">🗺️ 위치</a></td><td>-</td></tr>
+            </table></div>
+        </section>
+
         <section class="day-section" id="day-421">
-            <h2>🏯 4/21 (월) 히메지 성 & 코코엔</h2>
-            <div class="hotel-info">🏨 **08:00 조식 → 09:00 출발**</div>
+            <h2>🏯 4/21 (월) 히메지 성 & 코코엔 정원</h2>
+            <div class="hotel-info">🏨 **08:00 호텔 조식 → 09:00 숙소 출발**</div>
             <div class="table-container"><table>
                 <tr><th class="col-time">시간</th><th class="col-plan">일정</th><th class="col-detail">상세 이동 방법</th><th class="col-map">구글맵</th><th class="col-food">식사/비고</th></tr>
-                <tr><td>09:00</td><td>히메지 이동</td><td>벤텐초 → 오사카역 환승 → <span class="train-num">JR 신쾌속</span> → <a href="https://maps.google.com/?q=히메지역" class="place-link">히메지역</a></td><td><a href="https://www.google.com/maps/dir/Bentencho+Station/Himeji+Castle" target="_blank" class="map-btn">🗺️ 경로</a></td><td>신쾌속 필수</td></tr>
-                <tr><td>11:00</td><td>히메지 성</td><td><a href="https://maps.google.com/?q=히메지성" class="place-link">히메지 성</a> 및 <a href="https://maps.google.com/?q=코코엔" class="place-link">코코엔 정원</a></td><td><a href="https://maps.google.com/?q=히메지성" target="_blank" class="map-btn">🗺️ 위치</a></td><td>🍜 에키소바</td></tr>
+                <tr><td>09:00</td><td>히메지 이동</td><td>오사카역 → <span class="train-num">JR 신쾌속</span> → <a href="https://www.google.com/maps/search/Himeji+Station" class="place-link">히메지역</a></td><td><a href="https://www.google.com/maps/dir/Osaka/Himeji" target="_blank" class="map-btn">🗺️ 경로</a></td><td>신쾌속 필수</td></tr>
+                <tr><td>11:00</td><td>히메지 성</td><td><a href="https://www.google.com/maps/search/Himeji+Castle" class="place-link">히메지 성</a> 및 <a href="https://www.google.com/maps/search/Koko-en" class="place-link">코코엔</a> 정원</td><td><a href="https://www.google.com/maps/search/Himeji+Castle" target="_blank" class="map-btn">🗺️ 위치</a></td><td>🍜 에키소바</td></tr>
             </table></div>
         </section>
+
         <section class="day-section" id="day-422">
             <h2>✈️ 4/22 (화) 귀국</h2>
-            <div class="hotel-info">🏨 **08:00 조식 → 10:00 공항 이동**</div>
+            <div class="hotel-info">🏨 **08:00 호텔 조식 → 10:00 공항 이동**</div>
             <div class="table-container"><table>
                 <tr><th class="col-time">시간</th><th class="col-plan">일정</th><th class="col-detail">상세 이동 방법</th><th class="col-map">구글맵</th><th class="col-food">비고</th></tr>
-                <tr><td>10:00</td><td>공항 이동</td><td>벤텐초역 1번 승강장 → <span class="train-num">JR 간쿠쾌속</span> (60분)</td><td><a href="https://www.google.com/maps/dir/Bentencho+Station/Kansai+Airport" target="_blank" class="map-btn">🗺️ 경로</a></td><td>✈️ 13:10 출발</td></tr>
+                <tr><td>10:00</td><td>공항 이동</td><td>벤텐초 → <span class="train-num">JR 간쿠쾌속</span> → <a href="https://www.google.com/maps/search/Kansai+Airport" class="place-link">간사이공항</a></td><td><a href="https://www.google.com/maps/dir/Bentencho/Kansai+Airport" target="_blank" class="map-btn">🗺️ 경로</a></td><td>✈️ 13:10 비행기</td></tr>
             </table></div>
         </section>
     </div>
+
     <script>
         function filterSchedule() {
             const val = document.getElementById('day-filter').value;
@@ -102,4 +160,3 @@
     </script>
 </body>
 </html>
-
